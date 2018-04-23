@@ -1,0 +1,45 @@
+eureka:
+  client:
+    service-url:
+      defaultZone: http://localhost:7233/eureka/
+#      defaultZone: http://sunmi-node2:9098/eureka/,http://sunmi-node1:9097/eureka/,http://sunmi-node3:9099/eureka/
+
+server:
+  port: 1013
+spring:
+  application:
+    name: dataCenter
+
+feign:
+  hystrix:
+    enabled: true
+proxy-service-heyan:
+  ribbon:
+    ConnectTimeout: 30000
+    ReadTimeout: 120000
+#feign第一次请求失败，hystrix默认超时时间是1s
+hystrix:
+  command:
+    default:
+      execution:
+#        timeout:
+#          enabled: false #禁用Hystrix的超时时间
+        isolation:
+          thread:
+            timeoutInMilliseconds: 60000 #设置Hystrix的超时时间为5秒
+
+#设置负载均衡的超时时间和重试次数
+#data-center:
+#  ribbon:
+#    ConnectTimeout: 5000
+#    ReadTimeout: 2000
+#    OkToRetryOnAllOperations: true
+#    MaxAutoRetriesNextServer: 2
+#    MaxAutoRetries: 1
+
+#开启feign log
+logging:
+  level:
+    com.sunmi.sunmiforwarding.feign.ConnectDataCenterFeign: debug
+logback:
+  logdir: E:\\log-dev
