@@ -1,0 +1,89 @@
+
+################## 开发环境配置 ################################
+
+################## server ################################
+#eureka:
+#  client:
+#    service-url:
+#      defaultZone: http://sunmi-node2:9098/eureka/,http://sunmi-node1:9097/eureka/,http://sunmi-node3:9099/eureka/
+
+server:
+  port: 13142
+
+spring:
+  application:
+    name: data-center
+  datasource:
+    deviceinfo:  ## deviceinfo 数据源配置
+      url: jdbc:mysql://sunmi-finance-db:3306/deviceinfo?useSSL=false
+      username: sunmi
+      password: sunmi388
+      driverClassName: com.mysql.jdbc.Driver
+      type: com.alibaba.druid.pool.DruidDataSource
+    orderinfo: # order_info 数据源配置
+      url: jdbc:mysql://sunmi-finance-db:3306/dborder_info?useUnicode=true&characterEncoding=utf8
+      username: sunmi
+      password: sunmi388
+      driverClassName: com.mysql.jdbc.Driver
+      type: com.alibaba.druid.pool.DruidDataSource
+    druid:
+      deviceinfo: ##deviceinfo-->durid配置
+        initialSize: 5
+        minIdle: 5
+        maxActive: 20
+        maxWait: 60000
+        timeBetweenEvictionRunsMillis: 60000
+        minEvictableIdleTimeMillis: 300000
+        validationQuery: SELECT 1
+        testWhileIdle: true
+        testOnBorrow: false
+        testOnReturn: false
+        poolPreparedStatements: true
+        maxPoolPreparedStatementPerConnectionSize: 20
+        filters: stat,wall,log4j
+        connectionProperties:
+          druid:
+            stat:
+              mergeSql: true
+              slowSqlMillis: 5000
+        useGlobalDataSourceStat: true
+      orderinfo: ##orderinfo-->durid配置
+        initialSize: 5
+        minIdle: 5
+        maxActive: 20
+        maxWait: 60000
+        timeBetweenEvictionRunsMillis: 60000
+        minEvictableIdleTimeMillis: 300000
+        validationQuery: SELECT 1
+        testWhileIdle: true
+        testOnBorrow: false
+        testOnReturn: false
+        poolPreparedStatements: true
+        maxPoolPreparedStatementPerConnectionSize: 20
+        filters: stat,wall,log4j
+        connectionProperties:
+          druid:
+            stat:
+              mergeSql: true
+              slowSqlMillis: 5000
+        useGlobalDataSourceStat: true
+
+
+################## mybatis ################################
+#开启mybatis中二级缓存
+mybatis:
+  configuration:
+    cache-enabled: true
+
+################## logback ################################
+#配置log文件保存路径
+#使用该方式只会生成一个spring.log的文件
+#logging.path=E:\\
+logback:
+  logdir: log-datacenter-dev
+  
+#监控开关
+sleuth:  
+  enabled: true 
+#  sampler: 
+#    percentage: 1

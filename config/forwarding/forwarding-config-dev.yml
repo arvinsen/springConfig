@@ -1,14 +1,14 @@
-eureka:
-  client:
-    service-url:
-      defaultZone: http://localhost:7233/eureka/
+#eureka:
+#  client:
+#    service-url:
+#      defaultZone: http://localhost:7233/eureka/
 #      defaultZone: http://sunmi-node2:9098/eureka/,http://sunmi-node1:9097/eureka/,http://sunmi-node3:9099/eureka/
 
 server:
-  port: 9091
+  port: 13145
 spring:
   application:
-    name: service-sunmiforwardcenter
+    name: sunmiforwarding-center
 
 feign:
   hystrix:
@@ -42,4 +42,10 @@ logging:
   level:
     com.sunmi.sunmiforwarding.feign.ConnectDataCenterFeign: debug
 logback:
-  logdir: E:\\log-dev
+  logdir: log-forwarding-dev
+  
+#监控开关
+sleuth:  
+  enabled: true 
+#  sampler: 
+#    percentage: 1

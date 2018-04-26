@@ -4,12 +4,12 @@
 #      defaultZone: http://localhost:7233/eureka/
 #      defaultZone: http://sunmi-node2:9098/eureka/,http://sunmi-node1:9097/eureka/,http://sunmi-node3:9099/eureka/
 server:
-  port: 14000
+  port: 14001
 spring:
   application:
-    name: proxy-heyan
+    name: proxy-service-heyan
 logback:
-   logdir: log-proxy-heyan-dev
+   logdir: log-service-proxy-heyan
 
 #监控开关
 sleuth:  
