@@ -15,13 +15,13 @@ spring:
     name: data-center
   datasource:
     deviceinfo:  ## deviceinfo 数据源配置
-      url: jdbc:mysql://sunmi-finance-db:3306/deviceinfo?useSSL=false
+      url: jdbc:mysql://localhost:3306/deviceinfo?useSSL=false
       username: sunmi
       password: sunmi388
       driverClassName: com.mysql.jdbc.Driver
       type: com.alibaba.druid.pool.DruidDataSource
     orderinfo: # order_info 数据源配置
-      url: jdbc:mysql://sunmi-finance-db:3306/dborder_info?useUnicode=true&characterEncoding=utf8
+      url: jdbc:mysql://localhost:3306/dborder_info?useUnicode=true&characterEncoding=utf8
       username: sunmi
       password: sunmi388
       driverClassName: com.mysql.jdbc.Driver
