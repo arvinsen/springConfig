@@ -13,7 +13,7 @@ spring:
 feign:
   hystrix:
     enabled: true
-proxy-service-heyan:
+proxy-heyan:
   ribbon:
     ConnectTimeout: 30000
     ReadTimeout: 120000
@@ -38,9 +38,9 @@ hystrix:
 #    MaxAutoRetries: 1
 
 #开启feign log
-logging:
-  level:
-    com.sunmi.sunmiforwarding.feign.ConnectDataCenterFeign: debug
+#logging:
+#  level:
+#    com.sunmi.sunmiforwarding.feign.ConnectDataCenterFeign: debug
 logback:
   logdir: log-forwarding-dev
   
@@ -49,3 +49,6 @@ sleuth:
   enabled: true 
 #  sampler: 
 #    percentage: 1
+
+netty:
+  port: 13141
