@@ -4,7 +4,7 @@
 #      defaultZone: http://localhost:7233/eureka/
 #      defaultZone: http://sunmi-node2:9098/eureka/,http://sunmi-node1:9097/eureka/,http://sunmi-node3:9099/eureka/
 server:
-  port: 14090
+  port: 14990
 spring:
   application:
     name: proxy-heyan

@@ -5,7 +5,7 @@
 #      defaultZone: http://sunmi-node2:9098/eureka/,http://sunmi-node1:9097/eureka/,http://sunmi-node3:9099/eureka/
 
 server:
-  port: 13195
+  port: 13995
 spring:
   application:
     name: sunmiforwarding-center
