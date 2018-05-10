@@ -6,7 +6,7 @@
 from: forwardingprod
 
 server:
-  port: 13149
+  port: 13145
 spring:
   application:
     name: sunmiforwarding-center
