@@ -3,8 +3,10 @@
 #    serviceUrl:
 #      defaultZone: http://localhost:7233/eureka/
 #      defaultZone: http://sunmi-node2:9098/eureka/,http://sunmi-node1:9097/eureka/,http://sunmi-node3:9099/eureka/
-server:
-  port: 14000
+from: ruiforwarding-01
+
+#server:
+#  port: 14000
 spring:
   application:
     name: proxy-heyan
